@@ -42,12 +42,13 @@ public class PDFPrinterWebView extends WebViewClient {
         pageOptions.put("A4", PrintAttributes.MediaSize.ISO_A4);
         pageOptions.put("A2", PrintAttributes.MediaSize.ISO_A2);
         pageOptions.put("A1", PrintAttributes.MediaSize.ISO_A1);
+	pageOptions.put("letter", PrintAttributes.MediaSize.NA_LETTER);
     }
 
     public void setPageType(String type) {
         pageType = pageOptions.get(type);
         if (pageType == null) {
-            pageType = pageOptions.get("A4");
+            pageType = pageOptions.get("letter");
         }
     }
 
